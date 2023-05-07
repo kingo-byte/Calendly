@@ -36,45 +36,50 @@
 </div>
 @section scripts{
     <script>
+       
+
         document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("UserDetails", "User", new { userId = '1' })',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+            }).done(function (data) {
+                let eventsList = [];
+                
+                if (data) {
+                    eventsList = data.appointements;
+                
+                    var calendarEl = document.getElementById('calendar');
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialDate: Date.now(),
-                initialView: 'timeGridWeek',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-                },
-                height: 'auto',
-                navLinks: true, // can click day/week names to navigate views
-                //editable: true,
-                //selectable: true,
-                //selectMirror: true,
-                nowIndicator: true,
-                allDaySlot: false,
-                events: [
-                    {
-                        id: 1,
-                        title: 'Repeating Event',
-                        start: '2023-05-07T16:00:00',
-                        end: '2023-05-07T16:30:00'
-                    },
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        initialDate: Date.now(),
+                        initialView: 'timeGridWeek',
+                        headerToolbar: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                        },
+                        height: 'auto',
+                        navLinks: true, // can click day/week names to navigate views
+                        //editable: true,
+                        //selectable: true,
+                        //selectMirror: true,
+                        nowIndicator: true,
+                        allDaySlot: false,
+                        events: eventsList,
+                        eventClick: function (arg) {
+                            console.log(arg.event.id);
+                            window.location.href = `/Home/Index/${arg.event.id}`;
+                        },
+                    });
 
-                    {
-                        id: 2,
-                        title: 'Click for Google',
-                        start: '2023-05-07T15:30:00',
-                        end: '2023-05-07T16:00:00'
-                    }
-                ],
-                eventClick: function (arg) {
-                    console.log(arg.event.id);
-                    window.location.href = `/Home/Index/${arg.event.id}`;
-                },
+                    calendar.render();
+                }
             });
 
-            calendar.render();
-        });</script>
+           
+           
+        });
+    </script>
 }

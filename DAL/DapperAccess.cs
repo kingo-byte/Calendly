@@ -9,10 +9,9 @@ namespace DAL
 {
     internal class DapperAccess
     {
+        private string connectionString = WebConfigurationManager.AppSettings["CONN_STRING"];
         public List<T> Execute<T>(string storedProcedure, object param)
-        {
-            var connectionString = WebConfigurationManager.AppSettings["CONN_STRING"];
-
+        {   
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 return conn.Query<T>(storedProcedure, param, commandType: CommandType.StoredProcedure).ToList();
@@ -21,8 +20,6 @@ namespace DAL
 
         public void ExecuteNonQuery(string storedProcedure, object param)
         {
-            var connectionString = WebConfigurationManager.AppSettings["CONN_STRING"];
-
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
                 conn.Query(storedProcedure, param, commandType: CommandType.StoredProcedure).ToList();

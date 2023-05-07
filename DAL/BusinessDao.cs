@@ -11,14 +11,14 @@ namespace DAL
     {
         private static DapperAccess db = new DapperAccess();
 
-        public static List<Appointement> getAppointements() {
+        public static List<Appointement> getAppointements(int id) {
 
-            return db.Execute<Appointement>("GetAppointements", null).ToList();
+            return db.Execute<Appointement>("GetAppointements", new { userId = id }).ToList();
         }
 
-        public static void insertAppointement() {
+        public static User getUser(int id) {
 
-            db.ExecuteNonQuery("InsertAppointement", null);
+            return db.Execute<User>("GetUser", new { userId = id }).FirstOrDefault();
         }
     }
 }

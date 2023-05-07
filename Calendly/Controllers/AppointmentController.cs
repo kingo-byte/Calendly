@@ -12,8 +12,6 @@ namespace Calendly.Controllers
         // GET: Appointment
         public ActionResult Index(int? userId)
         {
-            var appointements = BusinessDao.getAppointements();
-
             return View();
         }
     }
