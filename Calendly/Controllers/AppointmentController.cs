@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DAL;
 
 namespace Calendly.Controllers
 {
@@ -11,6 +12,8 @@ namespace Calendly.Controllers
         // GET: Appointment
         public ActionResult Index(int? userId)
         {
+            var appointements = BusinessDao.getAppointements();
+
             return View();
         }
     }
