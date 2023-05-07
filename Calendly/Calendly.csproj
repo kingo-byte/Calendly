@@ -259,6 +259,8 @@
     <Content Include="Scripts\JS\dist\.eslintrc.json" />
     <Content Include="Scripts\JS\dist\adminlte.js.map" />
     <Content Include="Scripts\JS\dist\adminlte.min.js.map" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
