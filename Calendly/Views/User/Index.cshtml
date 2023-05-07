@@ -1,0 +1,80 @@
+﻿@section styles{
+    <style>
+    </style>
+}
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">My Calendar</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">My Calendar</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3">
+                <div class="text-right">
+                    <a class="rounded-5 btn btn-block btn-primary btn-lg" href="@Url.Action("Add","Appointment",new { })">Schedule an Appointement</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id='calendar'></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialDate: Date.now(),
+                initialView: 'timeGridWeek',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                },
+                height: 'auto',
+                navLinks: true, // can click day/week names to navigate views
+                //editable: true,
+                //selectable: true,
+                //selectMirror: true,
+                nowIndicator: true,
+                allDaySlot: false,
+                events: [
+                    {
+                        id: 1,
+                        title: 'Repeating Event',
+                        start: '2023-05-07T16:00:00',
+                        end: '2023-05-07T16:30:00'
+                    },
+
+                    {
+                        id: 2,
+                        title: 'Click for Google',
+                        start: '2023-05-07T15:30:00',
+                        end: '2023-05-07T16:00:00'
+                    }
+                ],
+                eventClick: function (arg) {
+                    console.log(arg.event.id);
+                    window.location.href = `/Home/Index/${arg.event.id}`;
+                },
+            });
+
+            calendar.render();
+        });</script>
+}
