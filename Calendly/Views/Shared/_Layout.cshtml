@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Starter</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="~/Content/CSS/fontawesome-free/css/all.min.css">
+    <!--DataTable-->
+    <link rel="stylesheet" href="~/Content/CSS/plugins/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/CSS/plugins/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/CSS/plugins/buttons.bootstrap4.min.css">
+
+    <!--Theme Style-->
     <link rel="stylesheet" href="~/Content/CSS/dist/adminlte.min.css">
     @RenderSection("styles", required: false)
 </head>
@@ -13,7 +21,7 @@
     <div class="wrapper">
         @Html.Partial("_NavBar", null)
         <div class="content-wrapper">
-            @RenderBody()           
+            @RenderBody()
         </div>
 
         <aside class="control-sidebar control-sidebar-dark">
@@ -29,10 +37,27 @@
     <!-- REQUIRED SCRIPTS -->
     <!-- FullCalendar-->
     <script src="~/Scripts/JS/fullCalendar/index.global.js"></script>
+
+
     <!-- jQuery -->
     <script src="~/Scripts/JS/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="~/Scripts/JS/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DataTable -->
+    <script src="~/Scripts/JS/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/JS/datatables-bs4/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/JS/datatables-responsive/dataTables.responsive.min.js"></script>
+    <script src="~/Scripts/JS/datatables-responsive/responsive.bootstrap4.min.js"></script>
+    <script src="~/Scripts/JS/datatables-buttons/dataTables.buttons.min.js"></script>
+    <script src="~/Scripts/JS/datatables-buttons/buttons.bootstrap4.min.js"></script>
+    <script src="~/Scripts/JS/jszip/jszip.min.js"></script>
+    <script src="~/Scripts/JS/pdfmake/pdfmake.min.js"></script>
+    <script src="~/Scripts/JS/pdfmake/vfs_fonts.js"></script>
+    <script src="~/Scripts/JS/datatables-buttons/buttons.html5.min.js"></script>
+    <script src="~/Scripts/JS/datatables-buttons/buttons.print.min.js"></script>
+    <script src="~/Scripts/JS/datatables-buttons/buttons.colVis.min.js"></script>
+    <!--DataTables-->
     <!-- AdminLTE App -->
     <script src="~/Scripts/JS/dist/adminlte.min.js"></script>
 

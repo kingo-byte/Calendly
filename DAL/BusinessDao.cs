@@ -1,4 +1,4 @@
-﻿using DAL.Models;
+﻿using Common.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +19,11 @@ namespace DAL
         public static User getUser(int id) {
 
             return db.Execute<User>("GetUser", new { userId = id }).FirstOrDefault();
+        }
+
+        public static List<User> getUsers()
+        {
+            return db.Execute<User>("GetUsers", null);
         }
     }
 }

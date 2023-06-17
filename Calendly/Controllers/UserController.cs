@@ -1,49 +1,38 @@
-﻿using DAL;
-using DAL.Models;
+﻿using Common.Models;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace Calendly.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-        public JsonResult UserDetails(int userId)
-        {
-            var user = BusinessDao.getUser(userId);
-
-            var appointements = BusinessDao.getAppointements(userId);
-
-            if(user !=  null &&  appointements!= null) {
-
-                user.appointements = appointements;
-
-                var parsedData = new
-                {
-                    userName = user.userName,
-                    userId  = user.userId,
-
-                    appointements = user.appointements.Select(c => new
-                    {
-                        id = c.appId,
-                        title = c.title,
-                        start = c.start.ToString("yyyy-MM-dd hh:mm:ss"),
-                        end = c.end.ToString("yyyy-MM-dd hh:mm:ss"),
-                    }).ToList()
-                };
-
-                return Json(parsedData);
-            }
-
-            return null;
-        }
- 
         public ActionResult Index()
         {
+            List<User> users = BusinessDao.getUsers();
+
+            if (users != null)
+            {
+                return View(users);
+            }
+
             return View();
+        }
+
+        public ActionResult EditCustomer(int id) { 
+        
+            User user = BusinessDao.getUser(id);
+
+            if (user != null) {
+
+                return View(user);
+            }
+
+            return RedirectToAction ("Index");  
         }
     }
 }

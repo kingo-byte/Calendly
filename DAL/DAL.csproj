@@ -88,8 +88,6 @@
   <ItemGroup>
     <Compile Include="BusinessDao.cs" />
     <Compile Include="DapperAccess.cs" />
-    <Compile Include="Models\Appointement.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f1162321-0ecb-4330-a623-66e5d41ad846}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
