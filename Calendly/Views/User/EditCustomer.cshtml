@@ -1,1 +1,55 @@
-﻿
+﻿@model Common.Models.UserViewModel
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="card card-danger mt-1">
+                    <div id="UserPersonalInfo">
+                        @Html.Partial("_EditUserTabOne", Model.User)
+                    </div>
+
+                    <div id="UserLegalInfo">
+                        @Html.Partial("_EditUserTabTwo", Model.User)
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col (left) -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+
+@section Scripts{
+    
+    <script>
+        $(document).ready(function () {
+            $("#UserPersonalInfo").hide();
+            $("#UserLegalInfo").hide();
+
+             debugger;
+
+            var x = '@Model.Tab';
+
+            console.log(x);
+
+            switch ('@Model.Tab') {
+
+            case 'tab1':
+                $("#UserPersonalInfo").show();
+                break;
+            case 'tab2':
+                $("#UserLegalInfo").show();
+                break;
+        }
+        });
+
+
+
+
+
+    </script>
+}

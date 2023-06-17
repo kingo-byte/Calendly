@@ -25,5 +25,18 @@ namespace DAL
         {
             return db.Execute<User>("GetUsers", null);
         }
+
+        public static void EditUserPersonalInformation(User user)
+        {
+            db.ExecuteNonQuery(
+            "UpdateUserPersonalInformation",
+                new 
+                {
+                  UserName = user.userName, 
+                  FirstName = user.firstName,
+                  LastName = user.lastName, 
+                }
+            );
+        }
     }
 }

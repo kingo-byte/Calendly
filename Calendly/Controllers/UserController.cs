@@ -23,16 +23,29 @@ namespace Calendly.Controllers
             return View();
         }
 
-        public ActionResult EditCustomer(int id) { 
+        public ActionResult EditCustomer(int id, string tab) { 
         
+            UserViewModel uvm = new UserViewModel();  
+
             User user = BusinessDao.getUser(id);
+
+            uvm.User = user;    
+            uvm.Tab = tab;  
 
             if (user != null) {
 
-                return View(user);
+                return View(uvm);
             }
 
             return RedirectToAction ("Index");  
+        }
+
+
+        public ActionResult SubmitUserPersonalInformation(User user) { 
+
+            BusinessDao.EditUserPersonalInformation(user);  
+
+            return RedirectToAction("EditCustomer", new {id = user.userId , tab = "tab2"});   
         }
     }
 }

@@ -39,7 +39,9 @@
                                     @foreach (var customer in Model)
                                     {
                                         <tr>
-                                            <td>@Url.Action("EditCustomer","Customer", new { })</td>
+                                            <td>
+                                                <a href="@Url.Action("EditCustomer","User", new { id = customer.userId, tab = "tab1" })">Edit</a>
+                                            </td>
                                             <td>@customer.userName</td>
                                             <td>@customer.firstName</td>
                                             <td>@customer.lastName</td>

@@ -154,6 +154,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\CSS\bootstrap-colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\CSS\bootstrap4-duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="Content\CSS\bs-stepper\bs-stepper.min.css" />
+    <Content Include="Content\CSS\daterangepicker\daterangepicker.css" />
     <Content Include="Content\CSS\dist\adminlte.css" />
     <Content Include="Content\CSS\dist\adminlte.min.css" />
     <Content Include="Content\CSS\dist\alt\adminlte.components.css" />
@@ -170,6 +174,7 @@
     <Content Include="Content\CSS\dist\alt\adminlte.plugins.min.css" />
     <Content Include="Content\CSS\dist\img\AdminLTELogo.png" />
     <Content Include="Content\CSS\dist\img\avatar5.png" />
+    <Content Include="Content\CSS\dropzone\dropzone.min.css" />
     <Content Include="Content\CSS\fontawesome-free\css\all.css" />
     <Content Include="Content\CSS\fontawesome-free\css\all.min.css" />
     <Content Include="Content\CSS\fontawesome-free\css\brands.css" />
@@ -187,12 +192,17 @@
     <Content Include="Content\CSS\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="Content\CSS\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="Content\CSS\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\CSS\icheck-bootstrap\icheck-bootstrap.min.css" />
     <Content Include="Content\CSS\plugins\buttons.bootstrap4.min.css" />
     <Content Include="Content\CSS\plugins\dataTables.bootstrap4.min.css" />
     <Content Include="Content\CSS\plugins\responsive.bootstrap4.min.css" />
+    <Content Include="Content\CSS\select2-bootstrap4-theme\select2-bootstrap4.min.css" />
+    <Content Include="Content\CSS\select2\select2.min.css" />
+    <Content Include="Content\CSS\tempusdominus-bootstrap-4\tempusdominus-bootstrap-4.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-switch\bootstrap-switch.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -226,6 +236,8 @@
     <Content Include="Content\CSS\dist\alt\adminlte.plugins.css.map" />
     <Content Include="Content\CSS\dist\alt\adminlte.plugins.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\bs-stepper\bs-stepper.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -235,6 +247,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JS\bootstrap-colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Scripts\JS\bootstrap4-duallistbox\jquery.bootstrap-duallistbox.min.js" />
     <Content Include="Scripts\JS\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Scripts\JS\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Scripts\JS\bootstrap\js\bootstrap.js" />
@@ -259,6 +273,7 @@
     <Content Include="Scripts\JS\datatables-responsive\responsive.bootstrap4.min.js" />
     <Content Include="Scripts\JS\datatables\jquery.dataTables.js" />
     <Content Include="Scripts\JS\datatables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\JS\daterangepicker\daterangepicker.js" />
     <Content Include="Scripts\JS\dist\adminlte.js" />
     <Content Include="Scripts\JS\dist\adminlte.min.js" />
     <Content Include="Scripts\JS\dist\demo.js" />
@@ -267,15 +282,19 @@
     <Content Include="Scripts\JS\dist\pages\dashboard3.js" />
     <Content Include="Scripts\JS\fullCalendar\index.global.js" />
     <Content Include="Scripts\JS\fullCalendar\index.global.min.js" />
+    <Content Include="Scripts\JS\inputmask\jquery.inputmask.min.js" />
     <Content Include="Scripts\JS\jquery\jquery.js" />
     <Content Include="Scripts\JS\jquery\jquery.min.js" />
     <Content Include="Scripts\JS\jquery\jquery.slim.js" />
     <Content Include="Scripts\JS\jquery\jquery.slim.min.js" />
     <Content Include="Scripts\JS\jszip\jszip.js" />
     <Content Include="Scripts\JS\jszip\jszip.min.js" />
+    <Content Include="Scripts\JS\moment\moment.min.js" />
     <Content Include="Scripts\JS\pdfmake\pdfmake.js" />
     <Content Include="Scripts\JS\pdfmake\pdfmake.min.js" />
     <Content Include="Scripts\JS\pdfmake\vfs_fonts.js" />
+    <Content Include="Scripts\JS\select2\select2.full.min.js" />
+    <Content Include="Scripts\JS\tempusdominus-bootstrap-4\tempusdominus-bootstrap-4.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -308,6 +327,7 @@
     <Content Include="Scripts\JS\pdfmake\pdfmake.min.js.map" />
     <Content Include="Views\User\EditCustomer.cshtml" />
     <Content Include="Views\Shared\_EditUserTabOne.cshtml" />
+    <Content Include="Views\Shared\_EditUserTabTwo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

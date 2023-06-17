@@ -17,24 +17,24 @@
             <label>UserName:</label>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
                 </div>
 
-                @Html.EditorFor(model => model.userName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.phoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
             </div>
             <!-- /.input group -->
         </div>
         <!-- /.form group -->
- 
+
         <div class="form-group">
             <label>FirstName:</label>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                 </div>
-                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
             <!-- /.input group -->
         </div>
@@ -45,19 +45,21 @@
 
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <span class="input-group-text"><i class="fa fa-users"></i></span>
                 </div>
-                @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.occupation, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.occupation, "", new { @class = "text-danger" })
             </div>
             <!-- /.input group -->
         </div>
         <!-- /.form group -->
 
         <div class="w-100 d-flex justify-content-end">
+            
+            <input type="submit" value="Previous" class="btn btn-success w-25 mr-1" />
             <input type="submit" value="Next" class="btn btn-success w-25" />
         </div>
-        
+
     </div>
     <!-- /.input group -->
 }
