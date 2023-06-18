@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Common.Models;
 using DAL;
 
 namespace Calendly.Controllers
@@ -18,21 +19,26 @@ namespace Calendly.Controllers
         // GET: User
         public JsonResult UserAppointments(int userId)
         {
+            UserViewModel viewModel = new UserViewModel();  
+
             var user = BusinessDao.getUser(userId);
 
             var appointements = BusinessDao.getAppointements(userId);
 
+            viewModel.User = user;
+            viewModel.Appointements = appointements;
+
             if (user != null && appointements != null)
             {
 
-                user.appointements = appointements;
+                viewModel.Appointements = appointements;
 
                 var parsedData = new
                 {
-                    userName = user.userName,
-                    userId = user.userId,
+                    userName = viewModel.User.UserName,
+                    userId = viewModel.User.UserId,
 
-                    appointements = user.appointements.Select(c => new
+                    appointements = viewModel.Appointements.Select(c => new
                     {
                         id = c.appId,
                         title = c.title,

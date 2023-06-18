@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Common.Models
 {
+    [Table("User")]
     public class User
     {
-        public int userId { get; set; }
-        public string userName { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string phoneNumber { get; set; }
-        public string email { get; set; }
-        public string personalId { get; set; }
-        public string occupation { get; set; }
-        public bool? isMarried { get; set; }
-        public int NbOfChildren { get; set; }
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string PersonalId { get; set; }
+        public string Occupation { get; set; }
+        public bool? IsMarried { get; set; }
+        public int? NbOfChildren { get; set; }
         public string WifeName { get; set; }
         public string FatherName { get; set; }
         public string MotherName { get; set; }
@@ -26,6 +28,5 @@ namespace Common.Models
         public string Street { get; set; }
         public string Nationality { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        public List<Appointement> appointements { get; set; }
     }
 }

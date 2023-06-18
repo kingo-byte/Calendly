@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace DAL
 {
     public static class BusinessDao
     {
         private static DapperAccess db = new DapperAccess();
+
+        private static EntityFrameWorkAccess context = new EntityFrameWorkAccess();    
 
         public static List<Appointement> getAppointements(int id) {
 
@@ -22,7 +25,9 @@ namespace DAL
         }
 
         public static List<User> getUsers()
-        {
+         {
+            var x = context.User.ToList();
+            
             return db.Execute<User>("GetUsers", null);
         }
 
@@ -32,10 +37,10 @@ namespace DAL
             "UpdateUserPersonalInformation",
                 new 
                 {
-                  UserId = user.userId,
-                  UserName = user.userName, 
-                  FirstName = user.firstName,
-                  LastName = user.lastName, 
+                  UserId = user.UserId,
+                  UserName = user.UserName, 
+                  FirstName = user.FirstName,
+                  LastName = user.LastName, 
                 }
             );
         }
@@ -45,10 +50,10 @@ namespace DAL
             db.ExecuteNonQuery(
                 "UpdateUserLegalInformation",
                     new { 
-                        UserId = user.userId,
-                        PhoneNumber = user.phoneNumber,
-                        Email = user.email,
-                        Occupation = user.occupation
+                        UserId = user.UserId,
+                        PhoneNumber = user.PhoneNumber,
+                        Email = user.Email,
+                        Occupation = user.Occupation
                     }
                 );
         }
