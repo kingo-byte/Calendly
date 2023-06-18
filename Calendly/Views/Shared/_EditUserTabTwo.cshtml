@@ -1,7 +1,7 @@
 ﻿@model Common.Models.User
 
 
-@using (Html.BeginForm("SubmitUserPersonalInformation", "User", FormMethod.Post))
+@using (Html.BeginForm("SubmitUserLegalInformation", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -14,7 +14,7 @@
 
     <div class="card-body">
         <div class="form-group">
-            <label>UserName:</label>
+            <label>PhoneNumber:</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-phone"></i></span>
@@ -28,7 +28,7 @@
         <!-- /.form group -->
 
         <div class="form-group">
-            <label>FirstName:</label>
+            <label>Email:</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
@@ -41,7 +41,7 @@
         <!-- /.form group -->
 
         <div class="form-group">
-            <label>LastName:</label>
+            <label>Occupation:</label>
 
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -56,8 +56,8 @@
 
         <div class="w-100 d-flex justify-content-end">
             
-            <input type="submit" value="Previous" class="btn btn-success w-25 mr-1" />
-            <input type="submit" value="Next" class="btn btn-success w-25" />
+            <a class="btn btn-success w-25 mr-1" href="@Url.Action("Previous", "User", new { id = Model.userId, tab = "tab1" })">Previous</a>
+            <input type="submit" value="Submit" class="btn btn-success w-25" />
         </div>
 
     </div>

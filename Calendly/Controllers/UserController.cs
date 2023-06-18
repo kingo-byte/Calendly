@@ -47,5 +47,17 @@ namespace Calendly.Controllers
 
             return RedirectToAction("EditCustomer", new {id = user.userId , tab = "tab2"});   
         }
+
+        public ActionResult SubmitUserLegalInformation(User user)
+        {
+            BusinessDao.EditUserLegalInformation(user);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Previous(int id, string tab)
+        {
+            return RedirectToAction("EditCustomer", "User", new { id, tab });
+        }
     }
 }

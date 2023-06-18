@@ -32,11 +32,25 @@ namespace DAL
             "UpdateUserPersonalInformation",
                 new 
                 {
+                  UserId = user.userId,
                   UserName = user.userName, 
                   FirstName = user.firstName,
                   LastName = user.lastName, 
                 }
             );
+        }
+
+        public static void EditUserLegalInformation(User user)
+        {
+            db.ExecuteNonQuery(
+                "UpdateUserLegalInformation",
+                    new { 
+                        UserId = user.userId,
+                        PhoneNumber = user.phoneNumber,
+                        Email = user.email,
+                        Occupation = user.occupation
+                    }
+                );
         }
     }
 }
