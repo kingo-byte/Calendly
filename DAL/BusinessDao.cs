@@ -26,7 +26,7 @@ namespace DAL
 
         public static List<User> getUsers()
          {
-            var x = context.User.ToList();
+            //var x = context.User.ToList();
             
             return db.Execute<User>("GetUsers", null);
         }
